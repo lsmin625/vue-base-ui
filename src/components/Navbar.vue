@@ -1,7 +1,8 @@
 <template>
 <div>
   <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#" v-b-toggle.sidebar-1><b-icon icon="list"></b-icon> Menu</b-navbar-brand>
+    <b-navbar-brand href="#" v-b-toggle.sidebar-1>
+      <b-icon icon="shield-fill-check" class="mr-2"></b-icon>SKBroadband IdPS</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
