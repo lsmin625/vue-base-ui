@@ -1,5 +1,5 @@
 {
-  "name": "temp",
+  "name": "idps_web_admin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,11 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
+    "portal-vue": "^2.1.7",
     "vue": "^2.6.11"
   },
   "devDependencies": {
