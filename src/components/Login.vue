@@ -49,6 +49,9 @@ export default {
     };
   },
   methods: {
+    display(flag) {
+      this.show = flag;
+    },
     onSubmit(event) {
       event.preventDefault();
       alert(JSON.stringify(this.form));

@@ -8,6 +8,7 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
+        <b-nav-item href="#"><router-link to="/login">Login</router-link></b-nav-item>
         <b-nav-item href="#" @click="showEvent">Link</b-nav-item>
         <b-nav-item href="#" disabled>Disabled</b-nav-item>
       </b-navbar-nav>
@@ -44,7 +45,10 @@
 <script>
 import Sidebar from "./Sidebar.vue";
 
+import router from '../router.js'
+
 export default {
+  render: router,
   components: {
     Sidebar
   },

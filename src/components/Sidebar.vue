@@ -11,3 +11,22 @@
     </b-sidebar>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      form: {
+        email: "",
+        password: "",
+      },
+      show: true,
+    };
+  },
+  methods: {
+    hide(event) {
+      event.preventDefault();
+    }
+  }
+};
+</script>

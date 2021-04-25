@@ -29,6 +29,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### 1. Vue 프레임워크 설치
 ```bash
 $ npm install vue
+$ npm install vue-cli
 ```
 #### 2. 어플리케이션 생성 : 상위 폴더에서 create 실행 (idps-web 폴더 생성)
 ```bash
@@ -49,6 +50,9 @@ $ npm install bootstrap
 $ npm install bootstrap-vue
 $ npm install @popperjs/core
 $ npm install portal-vue
+$ npm install vue-router
+$ npm install vuex
+$ npm install axios
 ```
 #### 4. VS Code 사용시 Vetur 추가 설정
 - Vetur(Vue tooling for VS Code)는 syntax-highlighting, error checking, 확장 emmet 등을 지원하며 VS extentions에서 설치
