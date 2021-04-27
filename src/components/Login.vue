@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import store from '../store.js'
+
 export default {
   data() {
     return {
@@ -54,7 +56,8 @@ export default {
     },
     onSubmit(event) {
       event.preventDefault();
-      alert(JSON.stringify(this.form));
+      store.commit('LOGIN', ({id: this.form.email, auth: {token: this.form.password, level: 1}}))
+      alert(JSON.stringify(store.state));
     },
     onReset(event) {
       event.preventDefault();

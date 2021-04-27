@@ -52,14 +52,12 @@ export default {
   components: {
     Sidebar
   },
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
-      },
-      show: true,
-    };
+  data: {
+    form: {
+      email: "",
+      password: "",
+    },
+    show: true,
   },
   methods: {
     showEvent(event) {

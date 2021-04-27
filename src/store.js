@@ -1,29 +1,32 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import axios from "axios"
 
 Vue.use(Vuex)
 
-const resourceHost = "http://localhost:3000"
-
 export default new Vuex.Store({
   state: {
-    accessToken: null,
+    id: null,
+    auth : { 
+      token: null,
+      level: null
+    }
   },
   getters: {},
   mutations: {
-    LOGIN(state, { accessToken }) {
-      state.accessToken = accessToken
+    LOGIN(state, { id, auth }) {
+      state.id = id
+      state.auth.token = auth.token
+      state.auth.level = auth.level
     },
     LOGOUT(state) {
-      state.accessToken = null
+      state.id = null
+      state.auth.token = null
+      state.auth.level = null
     },
   },
   actions: {
-    LOGIN({ commit }, { email, password }) {
-      return axios
-        .post(`${resourceHost}/login`, { email, password })
-        .then(({ data }) => commit("LOGIN", data))
+    LOGIN({ commit }, { id, auth }) {
+      commit("LOGIN", {id, auth})
     },
     LOGOUT({ commit }) {
       commit("LOGOUT")

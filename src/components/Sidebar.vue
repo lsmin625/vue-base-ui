@@ -14,14 +14,12 @@
 
 <script>
 export default {
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
-      },
-      show: true,
-    };
+  data: {
+    form: {
+      email: "",
+      password: "",
+    },
+    show: true,
   },
   methods: {
     hide(event) {
