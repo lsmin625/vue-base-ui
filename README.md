@@ -46,13 +46,8 @@ Vue CLI v4.5.12
 #### 3. 어플리케이션 기본 라이브러리 설치 (idps-web 폴더로 이동)
 ```bash
 $ cd idps-web
-$ npm install bootstrap
-$ npm install bootstrap-vue
-$ npm install @popperjs/core
-$ npm install portal-vue
-$ npm install vue-router
-$ npm install vuex
-$ npm install axios
+$ npm install bootstrap bootstrap-vue @popperjs/core portal-vue
+$ npm install vue-router vuex axios
 ```
 #### 4. VS Code 사용시 Vetur 추가 설정
 - Vetur(Vue tooling for VS Code)는 syntax-highlighting, error checking, 확장 emmet 등을 지원하며 VS extentions에서 설치
