@@ -158,14 +158,12 @@ To manage menu groups efficiently, each menu group is defined in a separate file
 ### Example of Registering Group Files in `store-menus.ts`
 
 ```javascript
+// Import menu group files
 import guideGroup from "@/menus/guide-group";
 import sessionGroup from "@/menus/session-group";
 import batchGroup from "@/menus/batch-group";
 import sagaGroup from "@/menus/saga-group";
 import ssoLinks from "@/menus/sso-links";
-import { Router } from "vue-router";
-
-const MAIN_PATH = '/main'
 
 // Add all menus to menuGroups
 export const menuGroups = [] as MenuGroup[];
