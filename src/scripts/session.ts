@@ -4,7 +4,7 @@ import { encodeToBase64, decodeFromBase64 } from '@/scripts/utils'
 import { useRouter } from 'vue-router'
 import { buildAuthMenuGroups, getAllAuthMenus } from './store-menus'
 
-const SESSION_USER = 'rally-poc-ui'
+const SESSION_USER = 'vue-base-ui'
 
 interface AuthMenu {
     systemId: string,

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginMain from '@/pages/domains/login/LoginMain.vue'
 import LogoutMain from '@/pages/domains/login/LogoutMain.vue'
-import RallyMain from '@/pages/domains/main/RallyMain.vue'
+import MainMain from '@/pages/domains/main/MainMain.vue'
 import UnknownMenuPage from "@/pages/domains/main/UnknownMenuPage.vue"
 import WrongRoutingPage from './components/WrongRoutingPage.vue';
 
@@ -26,7 +26,7 @@ const router = createRouter({
         {
             path: '/main',
             name: '/main',
-            component: RallyMain,
+            component: MainMain,
             children: [],
         },
         {
