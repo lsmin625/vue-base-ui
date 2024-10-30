@@ -3,7 +3,7 @@
 ## Overview
 With the modern shift in web service architecture, many systems now leverage REST APIs provided by the backend while implementing reactive frameworks on the frontend. This separation of frontend and backend components calls for an independent UI framework capable of handling common web service concerns, which is essential in a decoupled service environment. 
 
-This UI framework is designed to support frontend application development across various services by utilizing a minimal set of BFF (Backend For Frontend) APIs. Our goal is to offer the necessary tools and environment for developing versatile frontend UI applications.
+This UI framework is designed to support frontend application development across various services by utilizing a minimal set of BFF (Backend For Frontend) APIs. The goal is to offer the necessary tools and environment for developing versatile frontend UI applications.
 
 ### Key Considerations
 - **Large-scale Web Systems**: The framework should be suitable for applications with complex requirements and high user demand.
@@ -25,6 +25,9 @@ Vue provides a reactive, component-based architecture that simplifies complex UI
 - A reactive core design that enables dynamic UI updates with minimal code.
 - Modular, component-based structure for reusability and maintainability.
 - Rich ecosystem and compatibility with tools like Vite, Vue Router, and Vuex, empowering seamless development for various project requirements.
+
+### Bootstrap
+Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.
 
 ## Application Development Tools
 
