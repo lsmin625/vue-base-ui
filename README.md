@@ -142,3 +142,34 @@ export default {
     }
   ]
 }
+
+## Menu Group Management
+
+To manage menu groups efficiently, each menu group is defined in a separate file within the `menus` folder and registered in the menu store (`store-menus.ts`). This setup allows for independent and modular menu configuration based on access permissions and routing requirements.
+
+### Steps for Defining a Menu Group File
+1. **Create a Group File in the `menus` Folder**: Define a file for each menu group and list its menu items with attributes (`id`, `name`, `path`, `component`).
+2. **Assign `menuID` by Access Permissions**: Use the same `menuID` for items that share the same access permission characteristics, ensuring that routing paths and components are unique.
+3. **Set `component` to `null` for Placeholder Menus**: If a component is not yet developed, set `component` to `null`. This allows for early registration of the menu item.
+4. **Use `hidden` for Indirectly Accessed Pages**: Pages that are not directly accessible in the menu but can be navigated to from other screens should be marked as `hidden`. For DEV mode, set `authLevel` to `-1` to bypass server-based authorization and facilitate local development.
+5. **Register the Group File in the Menu Store**: Add each group file to the `menuGroups` array in `store-menus.ts` for centralized menu management.
+
+### Example of Registering Group Files in `store-menus.ts`
+
+```javascript
+import guideGroup from "@/menus/guide-group";
+import sessionGroup from "@/menus/session-group";
+import batchGroup from "@/menus/batch-group";
+import sagaGroup from "@/menus/saga-group";
+import ssoLinks from "@/menus/sso-links";
+import { Router } from "vue-router";
+
+const MAIN_PATH = '/main'
+
+// Add all menus to menuGroups
+export const menuGroups = [] as MenuGroup[];
+menuGroups.push(guideGroup as MenuGroup);
+menuGroups.push(sessionGroup as MenuGroup);
+menuGroups.push(batchGroup as MenuGroup);
+menuGroups.push(sagaGroup as MenuGroup);
+menuGroups.push(ssoLinks as MenuGroup);
