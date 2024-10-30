@@ -32,7 +32,7 @@ defineExpose({
   <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="sideMenuOffcanvas"
     style="width: 320px;">
     <div class="offcanvas-header bg-dark-subtle">
-      <h5 class="offcanvas-title" id="sideMenuOffcanvasLabel">NEXT BSS POC</h5>
+      <h5 class="offcanvas-title" id="sideMenuOffcanvasLabel">BFF BASE POC</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">

@@ -61,7 +61,7 @@ const showOffCanvas = () => {
       <div class="btn btn-light p-0 ps-1 pe-1" @click="showOffCanvas">
         <i class="bi bi-list ms-1 me-1" style="font-size: 1.5em;"></i>
       </div>
-      <span class="ps-2 navbar-brand" href="#">NEXT BSS POC</span>
+      <span class="ps-2 navbar-brand" href="#">BFF BASE POC</span>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li v-if="hasAuthMenu('/main/session')" class="nav-item">

@@ -161,7 +161,7 @@ const checkId = async () => {
 .bss-background {
   width: 590px;
   height: 380px;
-  background-image: url('/bss.png');
+  background-image: url('/login.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
