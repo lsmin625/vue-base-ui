@@ -1,49 +1,28 @@
 {
-  "name": "idps_web_admin",
-  "version": "0.1.0",
+  "name": "vue-base-ui",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite --mode dev",
+    "stg": "vite --mode stg",
+    "prd": "vite --mode prd",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "deploy": "vue-tsc && vite build"
   },
   "dependencies": {
-    "@popperjs/core": "^2.9.2",
-    "axios": "^0.21.1",
-    "bootstrap": "^4.6.0",
-    "bootstrap-vue": "^2.21.2",
-    "core-js": "^3.6.5",
-    "portal-vue": "^2.1.7",
-    "vue": "^2.6.11",
-    "vue-router": "^3.5.1",
-    "vuex": "^3.6.2"
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@types/node": "^22.7.7",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/runtime-core": "^3.4.31",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6"
+  }
 }
