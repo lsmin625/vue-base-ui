@@ -142,6 +142,7 @@ export default {
     }
   ]
 }
+```
 
 ## Menu Group Management
 
@@ -173,3 +174,4 @@ menuGroups.push(sessionGroup as MenuGroup);
 menuGroups.push(batchGroup as MenuGroup);
 menuGroups.push(sagaGroup as MenuGroup);
 menuGroups.push(ssoLinks as MenuGroup);
+```
