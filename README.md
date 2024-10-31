@@ -199,6 +199,7 @@ interface Response {
     message: string,       // Error message, provided in case of failure
     body: object | null    // Response data (object format)
 }
+```
 
 ## Pagination for List Data
 
