@@ -259,3 +259,32 @@ const getCodeGroups = async () => {
     }
 }
 ```
+
+## Using Modal Components
+
+Popup-style modal components are registered to the `<body>` tag via `teleport` and can be triggered through the `store-popups.ts` script. Different message types are categorized for various purposes:
+
+### Message Types
+
+- **notifySuccess**: Displays a success message when an event is processed successfully.
+- **notifyInfo**: Shows an informational message for event notifications.
+- **notifyError**: Presents an error message when an event processing error occurs.
+- **notifyConfirm**: Prompts the user for confirmation (OK or Cancel) and processes a callback function based on the user's selection.
+- **popToast**: A toast popup-style modal component that disappears after 3 seconds.
+
+This modular approach allows for versatile notification handling within the application, accommodating success, error, information, and confirmation prompts with a consistent, reusable UI component structure.
+
+```javascript
+import { notifyConfirm } from '@/scripts/store-popups'
+
+const startJob = async () => {
+    notifyConfirm(`[${props.operation.jobName}] 작업을 시작 할까요?`, async (yes: boolean) => {
+        if (yes) {
+            const requestBody = { ...props.operation }
+            requestBody.jobParameters = null
+            const url = '/batch/api/operation/start'
+            await apiCall.post(url, null, requestBody)
+        }
+    })
+}
+```
