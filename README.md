@@ -5,6 +5,14 @@ With the modern shift in web service architecture, many systems now leverage RES
 
 This UI framework is designed to support frontend application development across various services by utilizing a minimal set of BFF (Backend For Frontend) APIs. The goal is to offer the necessary tools and environment for developing versatile frontend UI applications.
 
+## UI Framework Refactoring for Reusability
+
+In response to every UI design changes, the UI framework has undergone a refactoring process. This approach allows for structural reusability while adapting to updated design requirements by modifying common components.
+- **Bootstrap Styling**: All component styles now use Bootstrap, ensuring consistent styling across components and simplifying the design adjustment process.
+- **Vue Component Conversion**: To enhance reusability, core UI elements have been converted into Vue components, allowing for modular use across different parts of the application.
+
+This refactored structure supports future UI adjustments without compromising the underlying framework, fostering efficient and maintainable development.
+
 ### Key Considerations
 - **Large-scale Web Systems**: The framework should be suitable for applications with complex requirements and high user demand.
 - **Diverse Developer Levels**: Designed to be approachable by both beginner and experienced developers, the framework prioritizes ease of use and flexibility.
@@ -175,4 +183,78 @@ menuGroups.push(sessionGroup as MenuGroup);
 menuGroups.push(batchGroup as MenuGroup);
 menuGroups.push(sagaGroup as MenuGroup);
 menuGroups.push(ssoLinks as MenuGroup);
+```
+
+## Backend API Integration
+
+All backend API responses are expected to follow a standardized format, allowing for consistent handling of responses in the frontend application.
+
+### API Response Format
+The standard response structure is defined as follows:
+
+```typescript
+interface Response {
+    result: number,        // 0 for success, 1 for failure
+    code: number,          // Error code, provided in case of failure
+    message: string,       // Error message, provided in case of failure
+    body: object | null    // Response data (object format)
+}
+
+## Pagination for List Data
+
+When handling paginated list data, the API request and response structure includes parameters for paging.
+
+### Request Parameters
+
+| Parameter | Description                        |
+|-----------|------------------------------------|
+| `count`   | Number of items per page           |
+| `offset`  | Page offset; first page is `0`     |
+
+### Response Format for Paginated Data
+The `body` of a paginated response follows the `PagedList` format:
+
+```typescript
+interface PagedList {
+    total: number,          // Total item count; if sequential data is provided without counting load, -1 indicates data remains, 0 indicates no data remains
+    count: number,          // Number of items on the current page
+    offset: number,         // Page offset; first page is 0
+    list: array             // Array of list data items
+}
+```
+Example Usage
+```javascript
+const table = reactive({
+    headers: [
+        { label: "순번", value: "no" },
+        { label: "코드그룹명", value: "codeGroupName" },
+        { label: "코드그룹ID", value: "codeGroupId" }
+    ],
+    items: [] as any,
+})
+
+const page = reactive({
+    total: 0,
+    current: 1,
+    count: 10,
+})
+
+const getCodeGroups = async () => {
+    table.items.length = 0
+
+    const url = '/api/code-group/list'
+    const queryParams = {
+        keyword: keyword.value,
+        count: page.count,
+        offset: page.current - 1
+    }
+    const { body: pagedList } = await apiCall.get(url, null, queryParams)
+    if (pagedList) {
+        page.total = pagedList.total
+        page.current = pagedList.offset + 1
+        table.items = pagedList.list
+        ascendArray(table.items, 'codeGroupName')
+        setSequence(table.items, (page.current - 1) * page.count + 1)
+    }
+}
 ```
